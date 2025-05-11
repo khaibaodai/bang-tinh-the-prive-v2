@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Công cụ tính dòng tiền nâng cấp - The Privé Luxury Apartment</title>
+    <title>Công cụ tính dòng tiền nâng cấp - The Privé - KHU CĂN HỘ BIỆT LẬP NGAY TRUNG TÂM SÀI GÒN</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
     <style>
         body {
@@ -149,7 +149,7 @@
         <!-- Header với logo và thông tin đại lý -->
         <header class="header">
             <div class="logo-container">
-                <h1 class="text-2xl font-bold">CÔNG CỤ TÍNH DÒNG TIỀN THE PRIVÉ</h1>
+                <h1 class="text-2xl font-bold">CÔNG CỤ TÍNH DÒNG TIỀN THE PRIVÉ - Cre:OneS</h1>
                 <div class="flex-grow"></div>
                 <div class="agent-info">
                     <div class="text-lg font-bold">Đại lý chiến lược OneS</div>
@@ -192,6 +192,7 @@
                             <option value="5">Tháp 5</option>
                             <option value="6">Tháp 6</option>
                             <option value="7">Tháp 7</option>
+                            <option value="8">Tháp 8</option>
                         </select>
                     </div>
                     <div>
@@ -392,11 +393,11 @@
                     <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
                         <div>
                             <label for="lai_suat_vay_uu_dai_nam">Lãi suất vay ưu đãi (%/năm):</label>
-                            <input type="number" id="lai_suat_vay_uu_dai_nam" value="6" step="0.1">
+                            <input type="number" id="lai_suat_vay_uu_dai_nam" value="7.5" step="0.1">
                         </div>
                         <div>
                             <label for="thoi_gian_vay_nam">Thời gian vay (năm):</label>
-                            <input type="number" id="thoi_gian_vay_nam" value="30">
+                            <input type="number" id="thoi_gian_vay_nam" value="25">
                         </div>
                         <div>
                             <label for="thoi_gian_ho_tro_lai_suat_thang">Thời gian hỗ trợ lãi suất (tháng):</label>
@@ -404,7 +405,7 @@
                         </div>
                         <div>
                             <label for="thoi_gian_an_han_goc_thang">Thời gian ân hạn nợ gốc (tháng):</label>
-                            <input type="number" id="thoi_gian_an_han_goc_thang" value="60">
+                            <input type="number" id="thoi_gian_an_han_goc_thang" value="24">
                         </div>
                     </div>
                 </div>
@@ -467,6 +468,18 @@
             },
             // Tháp 7
             '7': {
+                '01': { code: 'A1-1', type: '3 Phòng ngủ', area: 98.50, netArea: 89.70, direction: 'Đông Nam', view: 'Hồ bơi' },
+                '02': { code: 'C1-1', type: '1 Phòng ngủ', area: 49.80, netArea: 44.70, direction: 'Đông Nam', view: 'Công viên' },
+                '03': { code: 'B4-1', type: '2 Phòng ngủ', area: 76.30, netArea: 70.20, direction: 'Đông Nam', view: 'Công viên' },
+                '04': { code: 'B5-1', type: '2 Phòng ngủ', area: 80.60, netArea: 73.30, direction: 'Tây Nam', view: 'Công viên' },
+                '05': { code: 'B6-1', type: '2 Phòng ngủ', area: 81.00, netArea: 73.90, direction: 'Tây Nam', view: 'Sông Sài Gòn' },
+                '06': { code: 'A2a-1', type: '3 Phòng ngủ', area: 98.50, netArea: 89.40, direction: 'Tây Bắc', view: 'Sông Sài Gòn' },
+                '07': { code: 'B1-1', type: '2 Phòng ngủ', area: 80.90, netArea: 74.90, direction: 'Tây Bắc', view: 'Hồ bơi' },
+                '08': { code: 'B2-1', type: '2 Phòng ngủ', area: 88.70, netArea: 80.70, direction: 'Đông Bắc', view: 'Hồ bơi' },
+                '09': { code: 'B3-1', type: '2 Phòng ngủ', area: 71.50, netArea: 64.90, direction: 'Đông Bắc', view: 'Sông Sài Gòn' }
+            },
+            // Tháp 8
+            '8': {
                 '01': { code: 'A1-1', type: '3 Phòng ngủ', area: 98.50, netArea: 89.70, direction: 'Đông Nam', view: 'Hồ bơi' },
                 '02': { code: 'C1-1', type: '1 Phòng ngủ', area: 49.80, netArea: 44.70, direction: 'Đông Nam', view: 'Công viên' },
                 '03': { code: 'B4-1', type: '2 Phòng ngủ', area: 76.30, netArea: 70.20, direction: 'Đông Nam', view: 'Công viên' },
@@ -542,8 +555,8 @@
                 button.textContent = tower;
                 button.setAttribute('data-tower', tower);
                 button.addEventListener('click', function() {
-                    // Chỉ xử lý tháp 5, 6, 7 (theo hình ảnh đã cung cấp)
-                    if (['5', '6', '7'].includes(tower)) {
+                    // Chỉ xử lý tháp 5, 6, 7,8 (theo hình ảnh đã cung cấp)
+                    if (['5', '6', '7', '8'].includes(tower)) {
                         selectTower(tower);
                         document.getElementById('tower-select').value = tower;
                         // Chuyển sang tab mặt bằng tầng
@@ -633,7 +646,7 @@
             selectedTower = tower;
             
             // Cập nhật mặt bằng tầng
-            document.getElementById('floor-plan-image').src = "data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wBDAAEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/2wBDAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQEBAQH/wAARCAGQASwDASIAAhEBAxEB/8QAHwAAAQUBAQEBAQEAAAAAAAAAAAECAwQFBgcICQoL/8QAtRAAAgEDAwIEAwUFBAQAAAF9AQIDAAQRBRIhMUEGE1FhByJxFDKBkaEII0KxwRVS0fAkM2JyggkKFhcYGRolJicoKSo0NTY3ODk6Q0RFRkdISUpTVFVWV1hZWmNkZWZnaGlqc3R1dnd4eXqDhIWGh4iJipKTlJWWl5iZmqKjpKWmp6ipqrKztLW2t7i5usLDxMXGx8jJytLT1NXW19jZ2uHi4+Tl5ufo6erx8vP09fb3+Pn6/8QAHwEAAwEBAQEBAQEBAQAAAAAAAAECAwQFBgcICQoL/8QAtREAAgECBAQDBAcFBAQAAQJ3AAECAxEEBSExBhJBUQdhcRMiMoEIFEKRobHBCSMzUvAVYnLRChYkNOEl8RcYGRomJygpKjU2Nzg5OkNERUZHSElKU1RVVldYWVpjZGVmZ2hpanN0dXZ3eHl6goOEhYaHiImKkpOUlZaXmJmaoqOkpaanqKmqsrO0tba3uLm6wsPExcbHyMnK0tPU1dbX2Nna4uPk5ebn6Onq8vP09fb3+Pn6/9oADAMBAAIRAxEAPwD+/iiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooAKKKKACiiigAooooA//Z";
+            document.getElementById('floor-plan-image').src = "https://page1.genspark.site/v1/base64_upload/a445fbe580f4bffd3fae5b3330874ffa";
             
             // Tạo các nút căn hộ
             createApartmentButtons(tower);
@@ -962,5 +975,124 @@
             });
         }
     </script>
-</body>
+<!-- Nút Zalo CTA -->
+<div class="zalo-chat-widget">
+    <a href="https://zalo.me/4321344812365733664" target="_blank" aria-label="Chat Zalo với chúng tôi">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 2048 2048" width="40" height="40">
+            <path fill="#FFFFFF" d="M1752 453q56 80 56 179 0 104-59 185t-155 120q-74 29-155 29-90 0-172-39L980 1200q-36 101-36 189 0 73 42 140l448 248q119 66 198 66 97 0 184-50t138-132q37-63 37-134 0-83-44-155t-117-110q-75-39-158-39-73 0-146 30l-120 50q-2-35-2-58 0-152 87-268t228-154q100-28 193-28 116 0 215 46t159 124zm-792 507q0-142-72-258t-194-164q-118-47-232-47-138 0-258 56T44 909q-79 80-79 180 0 101 59 181t155 120q72 29 152 29 94 0 178-39l288-160q33-100 33-186z"/>
+        </svg>
+        <!-- Bạn có thể thêm chữ ở đây nếu muốn, ví dụ: <span>Chat Zalo</span> -->
+    </a>
+</div>
+
+<style>
+    .zalo-chat-widget {
+        position: fixed;
+        bottom: 25px; /* Khoảng cách từ dưới lên */
+        right: 25px;  /* Khoảng cách từ phải sang */
+        z-index: 1000; /* Đảm bảo nút nổi lên trên các phần tử khác */
+    }
+
+    .zalo-chat-widget a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;  /* Kích thước nút tròn */
+        height: 60px; /* Kích thước nút tròn */
+        background-color: #0068FF; /* Màu xanh đặc trưng của Zalo */
+        color: white;
+        border-radius: 50%; /* Bo tròn thành hình tròn */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Đổ bóng cho đẹp */
+        text-decoration: none;
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+
+    .zalo-chat-widget a:hover {
+        transform: scale(1.1); /* Phóng to nhẹ khi hover */
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .zalo-chat-widget svg {
+        /* Kích thước icon đã được set trong thẻ SVG, ở đây chỉ để dự phòng */
+        /* width: 30px; */
+        /* height: 30px; */
+    }
+
+    /* Tùy chọn: Nếu bạn muốn thêm chữ bên cạnh icon */
+    /*
+    .zalo-chat-widget a {
+        width: auto;
+        padding: 10px 20px;
+        border-radius: 30px;
+    }
+    .zalo-chat-widget svg {
+        margin-right: 8px;
+    }
+    .zalo-chat-widget span {
+        font-size: 14px;
+        font-weight: bold;
+    }
+    */
+</style>
+<!-- Nút Zalo CTA -->
+<div class="zalo-chat-widget">
+    <a href="https://zalo.me/4321344812365733664" target="_blank" aria-label="Chat Zalo với chúng tôi">
+        <!-- THAY THẾ LINK_LOGO_ZALO_OA_CUA_BAN.png BẰNG LINK ẢNH ĐÚNG CỦA BẠN -->
+        <img src="https://cnv.vn/wp-content/uploads/2025/01/zalo-oa-png.png" alt="Chat với Zalo OA" width="80" height="80" style="border-radius: 4px;">
+        <!-- Bạn có thể thêm chữ ở đây nếu muốn, ví dụ: <span>Chat Zalo</span> -->
+    </a>
+</div>
+
+<style>
+    .zalo-chat-widget {
+        position: fixed;
+        bottom: 25px; /* Khoảng cách từ dưới lên */
+        right: 25px;  /* Khoảng cách từ phải sang */
+        z-index: 1000; /* Đảm bảo nút nổi lên trên các phần tử khác */
+    }
+
+    .zalo-chat-widget a {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100px;  /* Kích thước nút tròn */
+        height: 100px; /* Kích thước nút tròn */
+        background-color: #ffffff; /* Màu xanh đặc trưng của Zalo */
+        color: white;
+        border-radius: 50%; /* Bo tròn thành hình tròn */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2); /* Đổ bóng cho đẹp */
+        text-decoration: none;
+        transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+    }
+
+    .zalo-chat-widget a:hover {
+        transform: scale(1.1); /* Phóng to nhẹ khi hover */
+        box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
+    }
+
+    .zalo-chat-widget img {
+        /* Kích thước đã được đặt inline trong thẻ img (width="35" height="35") */
+        /* Nếu logo của bạn là hình vuông và bạn muốn nó có góc bo tròn nhẹ thay vì tròn hoàn toàn,
+           bạn có thể dùng style="border-radius: 4px;" như trong ví dụ trên.
+           Nếu logo đã có nền trong suốt và hình dạng phù hợp, bạn có thể không cần border-radius cho img.
+        */
+    }
+
+    /* Tùy chọn: Nếu bạn muốn thêm chữ bên cạnh icon */
+    /*
+    .zalo-chat-widget a {
+        width: auto; /* Mở rộng nút để chứa chữ */
+        padding: 10px 15px; /* Điều chỉnh padding */
+        border-radius: 30px; /* Bo tròn cho nút dài hơn */
+    }
+    .zalo-chat-widget img { /* Nếu có chữ, điều chỉnh lề cho icon/logo */
+        margin-right: 8px;
+    }
+    .zalo-chat-widget span {
+        font-size: 14px;
+        font-weight: bold;
+    }
+    */
+</style>
+</body>  
 </html>
